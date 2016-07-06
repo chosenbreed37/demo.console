@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Topshelf;
 
 namespace App
 {
@@ -11,6 +12,20 @@ namespace App
         static void Main(string[] args)
         {
             Console.WriteLine("Running App 1.0...");
+            HostFactory.Run(x =>
+            {
+                x.Service<DemoService>(s =>
+                {
+                    s.ConstructUsing(name => new DemoService());
+                    s.WhenStarted(tc => tc.Start());
+                    s.WhenStopped(tc => tc.Stop());
+                });
+                x.RunAsLocalSystem();
+
+                x.SetDescription("Sample Topshelf Host");
+                x.SetDisplayName("Demo Service");
+                x.SetServiceName("DemoServiceApp");
+            });
         }
     }
 }
