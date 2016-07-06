@@ -13,6 +13,7 @@ namespace App.Tests
         [Test]
         public void SampleTest()
         {
+            Assert.Fail("Test failure");
         }
     }
 }
