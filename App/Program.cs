@@ -23,7 +23,7 @@ namespace App
                 x.RunAsLocalSystem();
 
                 x.SetDescription("Sample Topshelf Host");
-                x.SetDisplayName("Demo Service");
+                x.SetDisplayName("Demo Service App");
                 x.SetServiceName("DemoServiceApp");
             });
         }
