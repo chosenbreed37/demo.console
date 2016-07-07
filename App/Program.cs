@@ -11,7 +11,7 @@ namespace App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Running App 1.0...");
+            Console.WriteLine("Running App 0.1...");
             HostFactory.Run(x =>
             {
                 x.Service<DemoService>(s =>
